@@ -21,9 +21,7 @@ else:
 if base_url.endswith('/'):
     base_url = base_url[:-1]
 
-
 session = requests.Session()
-
 
 def banner():
     print('-'*50)
@@ -61,14 +59,11 @@ def connect():
         md5_hash = hashlib.md5(challenge_string)
         md5_hash = md5_hash.hexdigest()
         print('[+] MD5 Hash\n')
-        print(md5_hash)
-        
-                
+        print(md5_hash)                
 
     else:
         print('[-] Status : ' + str(connect_req.status_code))
         sys.exit()
-
         
     submit_data = {
         'hash': md5_hash,
